@@ -1,4 +1,4 @@
-#name: CI/CD Pipeline with EKS
+name: CI/CD Pipeline with EKS
 
 on:
   push:
