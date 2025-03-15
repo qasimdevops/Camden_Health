@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nodejs-app
-  namespace: test  # Add this line
+  namespace: test
 spec:
   replicas: 2
   selector:
@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: nodejs-app
-          image: <your-docker-hub-username>/nodejs-app:latest
+          image: qasim313/nodejs-app:latest  # Corrected image name
+          imagePullPolicy: Always  # Ensure latest image is pulled
           ports:
             - containerPort: 3000
 
@@ -24,7 +25,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nodejs-app-service
-  namespace: test  # Add this line
+  namespace: test
 spec:
   selector:
     app: nodejs-app
@@ -33,3 +34,4 @@ spec:
       port: 80
       targetPort: 3000
   type: LoadBalancer
+
