@@ -1,17 +1,4 @@
-{
-    "name": "nodejs-app",
-    "version": "1.0.0",
-    "description": "A simple Node.js app for Camden Health System",
-    "main": "app.js",
-    "scripts": {
-      "start": "node app.js",
-      "test": "jest"
-    },
-    "dependencies": {
-      "express": "^4.17.1"
-    },
-    "devDependencies": {
-      "jest": "^29.0.0",
-      "supertest": "^6.3.3"
-    }
-  }
+"scripts": {
+  "start": "node app.js",
+  "test": "jest --detectOpenHandles"
+}

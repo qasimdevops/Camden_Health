@@ -56,6 +56,9 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.listen(port, () => {
+// Export the app and server instances
+const server = app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
+
+module.exports = { app, server };

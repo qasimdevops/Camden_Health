@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nodejs-app
+  namespace: test  # Add this line
 spec:
   replicas: 2
   selector:
@@ -23,6 +24,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nodejs-app-service
+  namespace: test  # Add this line
 spec:
   selector:
     app: nodejs-app
