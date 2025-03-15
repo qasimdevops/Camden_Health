@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nodejs-app
+  namespace: test  # Add this line
 spec:
   replicas: 2
   selector:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nodejs-app
-          image: qasim313/nodejs-app:latest
+          image: <your-docker-hub-username>/nodejs-app:latest
           ports:
             - containerPort: 3000
 
@@ -23,6 +24,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nodejs-app-service
+  namespace: test  # Add this line
 spec:
   selector:
     app: nodejs-app
